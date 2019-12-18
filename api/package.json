@@ -5,7 +5,13 @@
   "main": "app.js",
   "scripts": {
     "start": "babel-node app.js",
-    "dev": "nodemon --exec babel-node app.js"
+    "dev": "nodemon --exec babel-node app.js",
+    "test": "npm run drop_unix & NODE_ENV=dev mocha test/ --reporter mochawesome --require babel-register --exit",
+    "filter_get": "npm run drop_unix & mocha test --grep get --require babel-register --exit",
+    "filter_package": "npm run drop_unix & mocha $paquete --require babel-register --exit",
+    "all_subfolders": "npm run drop_unix & mocha \"test/**/*.spec.js\" --require babel-register --exit",
+    "drop_win": "scripts\\dropdb.bat",
+    "drop_unix": "./scripts/dropdb.sh"
   },
   "keywords": [
     "qaninja",
@@ -25,6 +31,10 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
+    "chai": "4.2.0",
+    "chai-http": "4.3.0",
+    "mocha": "6.2.2",
+    "mochawesome": "^4.1.0",
     "nodemon": "^1.19.1"
   }
 }
