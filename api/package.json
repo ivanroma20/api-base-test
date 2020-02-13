@@ -11,7 +11,8 @@
     "filter_package": "npm run drop_unix & mocha $paquete --require babel-register --exit",
     "all_subfolders": "npm run drop_unix & mocha \"test/**/*.spec.js\" --require babel-register --exit",
     "drop_win": "scripts\\dropdb.bat",
-    "drop_unix": "./scripts/dropdb.sh"
+    "drop_unix": "./scripts/dropdb.sh",
+    "drop_users": "./scripts/dropuserqa.sh"
   },
   "keywords": [
     "qaninja",
